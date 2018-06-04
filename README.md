@@ -1,11 +1,17 @@
 # plugin.video.bricomania
-Kodi plugin to show all programs
+
+Kodi plugin to show all bricomania programs
 
 ## Branches
 
 ### kodi krypton
 
 This branch contains the code to use this plugin with [kodi KRYPTON](https://kodi.tv/kodi-v17-1-krypton)
+
+#### Useful paths
+
+* Installation path: ``$HOME/Library/Application Support/Kodi/addons/plugin.video.bricomania``
+* Kodi logs path: ``$HOME/Library/Logs/kodi.log``
 
 ### kodi jarvis
 
