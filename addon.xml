@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.bricomania" name="Bricomania-krypton" version="0.1.0 - krypton" provider-name="Iñaki Reta Sabarrós">
+<addon id="plugin.video.bricomania" name="Bricomania" version="0.1.0 - jarvis" provider-name="Iñaki Reta Sabarrós">
   <requires>
-    <import addon="xbmc.python" version="2.25.0"/>
-    <import addon="xbmc.gui" version="5.12.0"/>
+    <import addon="xbmc.python" version="2.24.0"/>
+    <import addon="xbmc.gui" version="5.10.0"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="brico-main.py">
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="es_ES">Con este add-on podrás ver los distintos videos que ha ido emitiendo
-    Bricomanía en su web</summary>
+    <summary lang="es_ES">Con este add-on podrás ver los distintos videos que ha ido emitiendo Bricomanía en su web</summary>
     <description lang="es_ES">Bricomanía es un programa de televisión español dedicado al bricolaje y a la jardinería. También da nombre a su propia revista, página web y a diversos libros.</description>
     <disclaimer lang="es_ES"></disclaimer>
     <language></language>

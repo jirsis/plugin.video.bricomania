@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import xbmc
-xbmc.log("BRICO-krypton hello")
+from tools import logger
+
+logger.debug("hola")
+
 #from tools import logger
 #from main import mainMenu
 #from year import yearMenu
