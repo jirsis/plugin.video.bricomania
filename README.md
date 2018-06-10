@@ -1,12 +1,6 @@
 # plugin.video.bricomania
 
-Kodi plugin to show all bricomania programs
-
-## Branches
-
-### kodi krypton
-
-This branch contains the code to use this plugin with [kodi KRYPTON](https://kodi.tv/kodi-v17-1-krypton)
+Kodi plugin to show all bricomania programs in kodi jarvis
 
 #### Useful paths
 
@@ -20,4 +14,4 @@ This branch contains the code to use this plugin with [kodi jarvis](https://kodi
 
 ### Dependencies
 
-To play videos you must to install in kodi the youtube plugin
+To play videos you must to install in kodi the [youtube plugin](https://kodi.wiki/view/Add-on:YouTube)
