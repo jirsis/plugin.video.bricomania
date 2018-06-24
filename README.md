@@ -2,10 +2,11 @@
 
 Kodi plugin to show all bricomania programs in kodi jarvis
 
-#### Useful paths
+#### Useful paths and urls
 
 * Installation path: ``$HOME/Library/Application Support/Kodi/addons/plugin.video.bricomania``
 * Kodi logs path: ``$HOME/Library/Logs/kodi.log``
+* Kodi API: [API](https://codedocs.xyz/AlwinEsch/kodi/index.html) 
 
 ### kodi jarvis
 
