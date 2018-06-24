@@ -12,7 +12,11 @@ Kodi plugin to show all bricomania programs in kodi jarvis
 
 This branch contains the code to use this plugin with [kodi jarvis](https://kodi.tv/article/kodi-161-%E2%80%93-jarvis-%E2%80%93-mark-xvi)
 
-
 ### Dependencies
 
 To play videos you must to install in kodi the [youtube plugin](https://kodi.wiki/view/Add-on:YouTube)
+
+
+### ToDo List
+
+- [ ] Add sort methods
