@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <category label="32001">
+        <setting label="Enable debug traces" type="bool" id="traces_enabled" default="false"/>
+        <setting label="Enable debug html" type="bool" id="html_debug_enabled" default="false"/>        
+    </category>
+</settings>
