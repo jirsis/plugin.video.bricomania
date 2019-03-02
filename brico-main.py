@@ -107,7 +107,7 @@ elif action[0] == 'month':
         thumbnail = re.findall('img src="(.*)" alt', week, re.DOTALL)[0]
         logger.debug(label + " -> " + href + '[' + thumbnail + ']')
         
-        query = {'action':'week', 'url': domain_base + href, 'year': yearSelected, 'month': monthSelected, 'week': label, 'thumbnail': thumbnail}
+        query = {'action':'week', 'url': href, 'year': yearSelected, 'month': monthSelected, 'week': label, 'thumbnail': thumbnail}
         logger.debug(query)
 
         url = plugin_url_base + '?' + urllib.urlencode(query)
@@ -123,20 +123,14 @@ elif action[0] == 'week':
     monthSelected = args.get('month', None)[0]
     weekSelected = args.get('week', None)[0]
     thumbnail = args.get('thumbnail', None)[0]
-    logger.debug('week menu: ' + weekSelected + ' [' + monthSelected + '/' + yearSelected + '] - play program')
-
     url = args.get('url', None)[0]
-    http = urllib2.urlopen(url)
-    html = http.read()
-    http.close()
-    logger.debugHtml(html)
 
-    youtubeUrl = re.findall('<iframe .* src="//(.*)" frameborder="0" allowfullscreen="true"></iframe>', html, re.DOTALL)[0]
+    logger.debug('week menu: ' + weekSelected + ' [' + monthSelected + '/' + yearSelected + '] - play program -> '+url)
+    
+    youtubeUrl = url
 
-    # youtubePath='plugin://plugin.video.youtube/play/?video_id='
     youtubePath='plugin://plugin.video.youtube/?path=/root/video&action=play_video&videoid='
-    youtubeId = youtubeUrl.replace('www.youtube.com/embed/', '')
-    youtubeId = youtubeId.replace('?rel=0&wmode=opaque', '')
+    youtubeId = youtubeUrl.replace('https://m.youtube.com/watch?v=', '')
     path = youtubePath + youtubeId
 
     logger.debug('YOUTUBE url: '+ youtubeUrl)
