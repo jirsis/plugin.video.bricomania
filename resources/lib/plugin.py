@@ -42,16 +42,15 @@ def index():
         href = re.findall('href="(.*)" title', year, re.DOTALL)[0]
         label = re.findall('<a .*>(.*)</a>', year, re.DOTALL)[0]
         logger.warn(currentYear+'-'+href+'--'+label)
-        addDirectoryItem(plugin.handle, plugin.url_for(show_category, label), ListItem(label), True)
+        addDirectoryItem(plugin.handle, plugin.url_for(show_year, label), ListItem(label), True)
 
     endOfDirectory(plugin.handle)
 
-
-@plugin.route('/category/<category_id>')
-def show_category(category_id):
-    addDirectoryItem(
-        plugin.handle, "", ListItem("Hello category %s!" % category_id))
+@plugin.route('/year/<year_id>')
+def show_year(year_id):
+    addDirectoryItem(plugin.handle, "", ListItem("Hello yearrrr %s!" % year_id))
     endOfDirectory(plugin.handle)
+
 
 def run():
     plugin.run()
