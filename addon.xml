@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.bricomania" name="Bricomania" version="0.1.1 - jarvis" provider-name="Iñaki Reta Sabarrós">
-  <requires>
-    <import addon="xbmc.python" version="2.24.0"/>
-    <import addon="xbmc.gui" version="5.10.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="brico-main.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="es_ES">Con este add-on podrás ver los distintos videos que ha ido emitiendo Bricomanía en su web</summary>
-    <description lang="es_ES">Bricomanía es un programa de televisión español dedicado al bricolaje y a la jardinería. También da nombre a su propia revista, página web y a diversos libros.</description>
-    <disclaimer lang="es_ES"></disclaimer>
-    <language></language>
-    <platform>all</platform>
-    <license></license>
-    <forum></forum>
-    <website></website>
-    <email>jirsis@gmail.com</email>
-    <source>https://github.com/jirsis/plugin.video.bricomania.git</source>
-    <news></news>
-    <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-        <banner></banner>
-        <clearlogo></clearlogo>
-        <screenshot></screenshot>
-    </assets>
-  </extension>
+<addon id="plugin.video.bricomania" name="Bricomania" version="0.0.1" provider-name="jirsis@gmail.com">
+    <requires>
+        <import addon="xbmc.python" version="2.25.0"/>
+        <import addon="script.module.routing" version="0.2.0"/>
+
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Plays all Bricomania videos are published in the program website</summary>
+        <description lang="en_GB"></description>
+        <language></language>
+        <platform>all</platform>
+        <license>Apache-2.0</license>
+        <forum></forum>
+        <website>https://github.com/jirsis/plugin.video.bricomania</website>
+        <email>jirsis@gmail.com</email>
+        <source></source>
+        <news></news>
+        <disclaimer></disclaimer>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+        </assets>
+    </extension>
 </addon>
