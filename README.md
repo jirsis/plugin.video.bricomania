@@ -14,4 +14,5 @@ To get the debug logging to work, just set the global kodi logging to true and t
 * Installation path: ``$HOME/Library/Application Support/Kodi/addons/plugin.video.bricomania``
 * Kodi logs path: ``$HOME/Library/Logs/kodi.log``
 * Kodi API: [API](https://codedocs.xyz/AlwinEsch/kodi/index.html)
+* [Regex debug](https://pythex.org/)
 

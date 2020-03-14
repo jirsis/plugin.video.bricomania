@@ -27,18 +27,22 @@ url_base = domain_base + '/tv/programas/bricomania/'
 
 @plugin.route('/')
 def index():
-    logger.warn("34567")
-    #http = urllib2.urlopen(url_base)
-    #html = http.read()
-    #http.close()
+    logger.warn(url_base)
+    http = urllib2.urlopen(url_base)
+    html = http.read()
+    http.close()
 
-    #yearsHtml = re.findall('<ul class="anio">(.*?)<ul class=', html, re.DOTALL)[0]
-    #years = re.findall('<li(.*?)</li>', yearsHtml, re.DOTALL)
-    years = ['2019', '2018', '2017', '2016', '2015', '1995']
+    yearsHtml = re.findall('<ul class="anio">(.*?)<ul class=', html, re.DOTALL)[0]
+    logger.warn(yearsHtml)
+    years = re.findall('<li(.*?)</li>', yearsHtml, re.DOTALL)
     years.reverse()
 
     for year in years:
-        addDirectoryItem(plugin.handle, plugin.url_for(show_category, year), ListItem("Category "+year), True)
+        currentYear = re.findall('title=".*">(.*)</a>', year, re.DOTALL)[0]
+        href = re.findall('href="(.*)" title', year, re.DOTALL)[0]
+        label = re.findall('<a .*>(.*)</a>', year, re.DOTALL)[0]
+        logger.warn(currentYear+'-'+href+'--'+label)
+        addDirectoryItem(plugin.handle, plugin.url_for(show_category, label), ListItem(label), True)
 
     endOfDirectory(plugin.handle)
 
