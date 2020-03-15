@@ -27,7 +27,7 @@ url_base = domain_base + '/tv/programas/bricomania/'
 
 @plugin.route('/')
 def index():
-    logger.warn(url_base)
+    #logger.warn(url_base)
     http = urllib2.urlopen(url_base)
     html = http.read()
     http.close()
@@ -37,7 +37,6 @@ def index():
     years = re.findall('<li(.*?)</li>', yearsHtml, re.DOTALL)
     years.reverse()
 
-    logger.warn('******2020-/tv/programas/bricomania/index.html?202001--2020')
     for year in years:
         href = re.findall('href="(.*)" title', year, re.DOTALL)[0]
         year_month = re.findall('\?(.*)', href, re.DOTALL)[0]
@@ -48,7 +47,7 @@ def index():
 
 @plugin.route('/year/<year_month_id>')
 def show_year(year_month_id):
-    logger.warn(year_month_id)
+    #logger.warn(year_month_id)
 
     http = urllib2.urlopen('{url}index.html?{year_month_id}'.format(url=url_base, year_month_id=year_month_id))
     html = http.read()
@@ -85,17 +84,17 @@ def show_month(year_month_id):
         href = re.findall('href="(.*)" title', week, re.DOTALL)[0]
         label = re.findall('title="(.*)">.*<span', week, re.DOTALL)[0] + ' [' + date + ']'
         thumbnail = re.findall('img src="(.*)" alt', week, re.DOTALL)[0]
-        
+        #logger.warn(domain_base+thumbnail)
+
         youtubeId = href.replace('https://m.youtube.com/watch?v=', '')
-        addDirectoryItem(plugin.handle, plugin.url_for(play_youtube, youtubeId), ListItem(label))    
+        addDirectoryItem(plugin.handle, plugin.url_for(play_youtube, youtubeId), ListItem(label))
         
         
     endOfDirectory(plugin.handle)
 
 @plugin.route('/youtube/<youtube_id>')
 def play_youtube(youtube_id):
-    logger.warn(youtube_id)
-    #youtubePath='plugin://plugin.video.youtube/?path=/root/video&action=play_video&videoid={youtube_id}'
+    #logger.warn(youtube_id)
     youtubePath='plugin://plugin.video.youtube/play/?video_id={video}'.format(video=youtube_id)
     xbmc.executebuiltin('PlayMedia({youtubePath})'.format(youtubePath=youtubePath))
 

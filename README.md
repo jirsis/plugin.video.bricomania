@@ -16,3 +16,8 @@ To get the debug logging to work, just set the global kodi logging to true and t
 * Kodi API: [API](https://codedocs.xyz/AlwinEsch/kodi/index.html)
 * [Regex debug](https://pythex.org/)
 
+### Dependencies
+
+* Youtube kodi plugin
+* Personal API keys [howto](https://github.com/jdf76/plugin.video.youtube/wiki/Personal-API-Keys)
+
