@@ -69,10 +69,36 @@ def show_year(year_month_id):
 
 @plugin.route('/month/<year_month_id>')
 def show_month(year_month_id):
-    logger.warn(year_month_id)
+    #logger.warn(year_month_id)
 
-    addDirectoryItem(plugin.handle, "", ListItem("Hello year %s!" % 42))
+    http = urllib2.urlopen('{url}index.html?{year_month_id}'.format(url=url_base, year_month_id=year_month_id))
+    html = http.read()
+    http.close()
+
+    weeksHtml = re.findall('<li class="pagina-tv">.*<ul>(.*?)</ul>', html, re.DOTALL)[0]
+    weeks = re.findall('<li>(.*?)</li>', weeksHtml, re.DOTALL)
+    #weeks.reverse()
+    
+    for week in weeks:
+        #logger.warn(week)
+        date = re.findall('fecha">(.*)</h3>', week, re.DOTALL)[0]
+        href = re.findall('href="(.*)" title', week, re.DOTALL)[0]
+        label = re.findall('title="(.*)">.*<span', week, re.DOTALL)[0] + ' [' + date + ']'
+        thumbnail = re.findall('img src="(.*)" alt', week, re.DOTALL)[0]
+        
+        youtubeId = href.replace('https://m.youtube.com/watch?v=', '')
+        addDirectoryItem(plugin.handle, plugin.url_for(play_youtube, youtubeId), ListItem(label))    
+        
+        
     endOfDirectory(plugin.handle)
+
+@plugin.route('/youtube/<youtube_id>')
+def play_youtube(youtube_id):
+    logger.warn(youtube_id)
+    #youtubePath='plugin://plugin.video.youtube/?path=/root/video&action=play_video&videoid={youtube_id}'
+    youtubePath='plugin://plugin.video.youtube/play/?video_id={video}'.format(video=youtube_id)
+    xbmc.executebuiltin('PlayMedia({youtubePath})'.format(youtubePath=youtubePath))
+
 
 def run():
     plugin.run()
