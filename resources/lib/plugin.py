@@ -87,7 +87,9 @@ def show_month(year_month_id):
         #logger.warn(domain_base+thumbnail)
 
         youtubeId = href.replace('https://m.youtube.com/watch?v=', '')
-        addDirectoryItem(plugin.handle, plugin.url_for(play_youtube, youtubeId), ListItem(label))
+        tvShowItem = ListItem(label);
+        tvShowItem.setArt({'thumb': domain_base+thumbnail});
+        addDirectoryItem(plugin.handle, plugin.url_for(play_youtube, youtubeId), tvShowItem)
         
         
     endOfDirectory(plugin.handle)
